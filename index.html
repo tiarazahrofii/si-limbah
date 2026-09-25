@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SI—LIMBAH</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="home-navbar">
+
+    <a
+        href="index.html"
+        class="home-logo"
+    >
+        <span class="logo-mark">♻</span>
+
+        <span>
+            SI—LIMBAH
+        </span>
+    </a>
+
+
+    <nav class="home-nav">
+
+        <a
+            href="index.html"
+            class="active"
+        >
+            Beranda
+        </a>
+
+        <a href="#kategori">
+            Kategori
+        </a>
+
+        <a href="#popular">
+            Populer
+        </a>
+
+        <a href="#tentang">
+            Tentang
+        </a>
+
+    </nav>
+
+
+    <a
+        href="#search"
+        class="nav-search"
+    >
+        <span>⌕</span>
+    </a>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<main>
+
+
+<section class="home-hero">
+
+    <div class="hero-decoration hero-leaf">
+        ✦
+    </div>
+    <div class="hero-center-doodle doodle-one">
+    ✦
+</div>
+
+<div class="hero-center-doodle doodle-two">
+    · · ·
+</div>
+
+<div class="hero-center-text">
+    REUSE
+    <br>
+    REIMAGINE
+</div>
+
+<div class="hero-center-line"></div>
+
+
+    <div class="hero-content">
+
+        <span class="hero-small-label">
+            SISTEM INFORMASI PENGELOLAAN LIMBAH
+        </span>
+
+
+        <h1>
+
+            Punya
+            <span>limbah?</span>
+
+            <br>
+
+            Cari tahu
+            <em>bisa jadi apa.</em>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Temukan cara memilah, mengelola,
+            dan memanfaatkan limbah di sekitarmu
+            menjadi sesuatu yang lebih berguna.
+
+        </p>
+
+
+
+        <!-- SEARCH -->
+
+        <div
+            class="home-search"
+            id="search"
+        >
+
+            <span class="search-icon">
+                ⌕
+            </span>
+
+
+            <input
+                type="text"
+                id="homeSearchInput"
+                placeholder="Cari jenis limbah..."
+                autocomplete="off"
+            >
+
+
+            <button
+                type="button"
+                onclick="searchFromHome()"
+            >
+                →
+            </button>
+
+        </div>
+
+
+
+        <!-- TAGLINE -->
+
+        <div class="hero-tagline">
+
+            <span class="tagline-icon">
+                ♧
+            </span>
+
+            <div>
+
+                <strong>
+                    MARI BIJAK DALAM
+                </strong>
+
+                <span>
+                    MEMILAH & MENGELOLA SAMPAH
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- HERO VISUAL -->
+
+    <div class="hero-visual">
+
+        <div class="visual-paper">
+
+            <div class="visual-circle">
+                ♻
+            </div>
+
+            <div class="visual-bottle">
+                🧴
+            </div>
+
+            <div class="visual-box">
+                📦
+            </div>
+
+            <div class="visual-plant">
+                🌱
+            </div>
+
+        </div>
+
+
+        <div class="visual-note">
+
+            Limbah bukan akhir,
+
+            <br>
+
+            <strong>
+                tapi awal baru.
+            </strong>
+
+        </div>
+
+
+        <div class="visual-doodle">
+            3R
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     POPULAR
+===================================================== -->
+
+<section
+    class="popular-section"
+    id="popular"
+>
+
+    <div class="section-title-row">
+
+        <div>
+
+            <span class="mini-label">
+                SERING DICARI
+            </span>
+
+            <h2>
+                Populer dicari
+                <span>✦</span>
+            </h2>
+
+        </div>
+
+
+        <span class="section-number">
+            01 / 04
+        </span>
+
+    </div>
+
+
+    <div class="popular-list">
+
+
+        <button
+            class="popular-item"
+            onclick="searchPopular('Botol Plastik')"
+        >
+
+            <span class="popular-icon">
+                🧴
+            </span>
+
+            <span>
+                Botol Plastik
+            </span>
+
+            <span class="popular-arrow">
+                ↗
+            </span>
+
+        </button>
+
+
+
+        <button
+            class="popular-item"
+            onclick="searchPopular('Kardus')"
+        >
+
+            <span class="popular-icon">
+                📦
+            </span>
+
+            <span>
+                Kardus
+            </span>
+
+            <span class="popular-arrow">
+                ↗
+            </span>
+
+        </button>
+
+
+
+        <button
+            class="popular-item"
+            onclick="searchPopular('Pampers')"
+        >
+
+            <span class="popular-icon">
+                ♻
+            </span>
+
+            <span>
+                Pampers
+            </span>
+
+            <span class="popular-arrow">
+                ↗
+            </span>
+
+        </button>
+
+
+
+        <button
+            class="popular-item"
+            onclick="searchPopular('Potongan Bambu')"
+        >
+
+            <span class="popular-icon">
+                🎋
+            </span>
+
+            <span>
+                Bambu
+            </span>
+
+            <span class="popular-arrow">
+                ↗
+            </span>
+
+        </button>
+
+
+
+        <button
+            class="popular-item"
+            onclick="searchPopular('Minyak Jelantah')"
+        >
+
+            <span class="popular-icon">
+                🫗
+            </span>
+
+            <span>
+                Jelantah
+            </span>
+
+            <span class="popular-arrow">
+                ↗
+            </span>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     KATEGORI
+===================================================== -->
+
+<section
+    class="category-section"
+    id="kategori"
+>
+
+    <div class="category-intro">
+
+        <span class="mini-label">
+            TEMUKAN CARA LAIN
+        </span>
+
+
+        <h2>
+
+            Untuk mengelola
+            <br>
+
+            <span>limbahmu.</span>
+
+        </h2>
+
+
+        <p>
+
+            Setiap limbah punya potensi.
+            Yuk, cari tahu berbagai cara
+            mengelolanya sesuai kebutuhanmu.
+
+        </p>
+
+
+        <div class="little-line">
+            ~ ~ ~
+        </div>
+
+    </div>
+
+
+
+    <div class="category-grid">
+
+
+        <a
+            href="#"
+            class="category-card category-home"
+        >
+
+            <div class="category-icon">
+                🏠
+            </div>
+
+            <span class="category-number">
+                01
+            </span>
+
+            <h3>
+                Rumah Tangga
+            </h3>
+
+            <p>
+                Untuk kebutuhan
+                sehari-hari
+            </p>
+
+            <span class="category-arrow">
+                →
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="#"
+            class="category-card category-farm"
+        >
+
+            <div class="category-icon">
+                🌱
+            </div>
+
+            <span class="category-number">
+                02
+            </span>
+
+            <h3>
+                Pertanian
+            </h3>
+
+            <p>
+                Dukung pertanian
+                berkelanjutan
+            </p>
+
+            <span class="category-arrow">
+                →
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="#"
+            class="category-card category-umkm"
+        >
+
+            <div class="category-icon">
+                🏪
+            </div>
+
+            <span class="category-number">
+                03
+            </span>
+
+            <h3>
+                UMKM
+            </h3>
+
+            <p>
+                Jadi peluang
+                usaha
+            </p>
+
+            <span class="category-arrow">
+                →
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="#"
+            class="category-card category-industry"
+        >
+
+            <div class="category-icon">
+                🏭
+            </div>
+
+            <span class="category-number">
+                04
+            </span>
+
+            <h3>
+                Industri
+            </h3>
+
+            <p>
+                Solusi untuk
+                skala besar
+            </p>
+
+            <span class="category-arrow">
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     IDE PENGELOLAAN
+===================================================== -->
+
+<section
+    class="idea-section"
+    id="tentang"
+>
+
+    <div class="section-title-row">
+
+        <div>
+
+            <span class="mini-label">
+                DARI LIMBAH JADI MANFAAT
+            </span>
+
+            <h2>
+                Ide pengelolaan
+                <span>✦</span>
+            </h2>
+
+        </div>
+
+
+        <span class="idea-note">
+            Jelajahi →
+        </span>
+
+    </div>
+
+
+
+    <div class="idea-grid">
+
+
+        <a
+            href="detail.html?waste=Botol%20Plastik"
+            class="idea-card"
+        >
+
+            <div class="idea-image idea-bottle">
+                🧴
+            </div>
+
+            <div class="idea-content">
+
+                <span>
+                    BOTOL PLASTIK
+                </span>
+
+                <h3>
+                    Dari botol
+                    jadi lebih berguna.
+                </h3>
+
+                <p>
+                    Vas, pot, tempat pensil,
+                    hingga berbagai kreasi lainnya.
+                </p>
+
+                <strong>
+                    Lihat ide →
+                </strong>
+
+            </div>
+
+        </a>
+
+
+
+        <a
+            href="detail.html?waste=Kardus"
+            class="idea-card"
+        >
+
+            <div class="idea-image idea-cardboard">
+                📦
+            </div>
+
+            <div class="idea-content">
+
+                <span>
+                    KARDUS
+                </span>
+
+                <h3>
+                    Jangan buru-buru
+                    dibuang.
+                </h3>
+
+                <p>
+                    Bisa dimanfaatkan menjadi
+                    tempat penyimpanan dan kerajinan.
+                </p>
+
+                <strong>
+                    Lihat ide →
+                </strong>
+
+            </div>
+
+        </a>
+
+
+
+        <a
+            href="detail.html?waste=Potongan%20Bambu"
+            class="idea-card"
+        >
+
+            <div class="idea-image idea-bamboo">
+                🎋
+            </div>
+
+            <div class="idea-content">
+
+                <span>
+                    POTONGAN BAMBU
+                </span>
+
+                <h3>
+                    Sisa potongan,
+                    tetap punya cerita.
+                </h3>
+
+                <p>
+                    Ubah menjadi pot, vas,
+                    rak mini, dan dekorasi.
+                </p>
+
+                <strong>
+                    Lihat ide →
+                </strong>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CLOSING
+===================================================== -->
+
+<section class="home-closing">
+
+    <div class="closing-decoration">
+        ✦
+    </div>
+
+
+    <span>
+        SI—LIMBAH / 2026
+    </span>
+
+
+    <h2>
+
+        Sampah hari ini,
+
+        <br>
+
+        <em>
+            bisa jadi manfaat esok hari.
+        </em>
+
+    </h2>
+
+
+    <p>
+        Mulai dari satu limbah.
+        Mulai dari hal sederhana.
+    </p>
+
+
+    <div class="closing-line">
+        ♻ &nbsp; PILAH &nbsp; • &nbsp; KELOLA &nbsp; • &nbsp; MANFAATKAN
+    </div>
+
+</section>
+<footer class="home-footer">
+
+    <span>
+        © 2026 Tiara Zahrofi Ifadhah - Universitas Negeri Surabaya. All Rights Reserved.
+    </span>
+
+    <span>
+        SI—LIMBAH
+    </span>
+
+    <span>
+        Mari bijak dalam memilah dan mengelola sampah.
+    </span>
+
+</footer>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     SCRIPT
+===================================================== -->
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+
+
+<script>
+
+function searchFromHome() {
+
+    const input =
+        document.getElementById(
+            "homeSearchInput"
+        );
+
+    const keyword =
+        input.value.trim();
+
+    if (!keyword) {
+
+        input.focus();
+
+        return;
+
+    }
+
+    window.location.href =
+        "index.html?search=" +
+        encodeURIComponent(keyword);
+
+}
+
+
+function searchPopular(name) {
+
+    window.location.href =
+        "index.html?search=" +
+        encodeURIComponent(name);
+
+}
+
+
+document
+    .getElementById("homeSearchInput")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                searchFromHome();
+
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>

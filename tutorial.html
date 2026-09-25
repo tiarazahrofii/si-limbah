@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tutorial Pengelolaan - SI-LIMBAH</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                SI-LIMBAH
+            </a>
+
+            <a
+                href="index.html"
+                class="nav-back"
+            >
+                ← Kembali
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         TUTORIAL PAGE
+    ========================== -->
+
+    <main class="tutorial-page">
+
+        <div class="tutorial-container">
+
+
+            <!-- BACK -->
+
+            <a
+                href="#"
+                id="backProcess"
+                class="back-link"
+            >
+                ← Kembali ke pilihan pengelolaan
+            </a>
+
+
+
+            <!-- HEADER -->
+
+            <section class="tutorial-header">
+
+                <span
+                    class="section-label"
+                    id="tutorialLabel"
+                >
+                    TUTORIAL PENGELOLAAN
+                </span>
+
+
+                <h1 id="tutorialTitle">
+                    Memuat informasi...
+                </h1>
+
+
+                <p id="tutorialDescription">
+                    Memuat informasi pengelolaan limbah.
+                </p>
+
+            </section>
+
+
+
+            <!-- IMAGE / ICON -->
+
+            <section class="tutorial-visual">
+
+                <div
+                    class="tutorial-placeholder"
+                    id="tutorialVisual"
+                >
+                    ♻️
+                </div>
+
+            </section>
+
+            <!-- VISUAL -->
+                <div id="tutorialVisual">
+                     ♻️
+                </div>
+
+            <!-- BAHAN -->
+
+            <section
+                class="tutorial-section"
+                id="materialsSection"
+            >
+
+                <div class="tutorial-section-heading">
+
+                    <span class="section-label">
+                        YANG DIBUTUHKAN
+                    </span>
+
+                    <h2>
+                        Bahan & Peralatan
+                    </h2>
+
+                </div>
+
+
+                <div
+                    class="materials-list"
+                    id="materialsList"
+                >
+                </div>
+
+            </section>
+
+
+
+            <!-- LANGKAH -->
+
+            <section
+                class="tutorial-section"
+                id="stepsSection"
+            >
+
+                <div class="tutorial-section-heading">
+
+                    <span class="section-label">
+                        CARA PENGELOLAAN
+                    </span>
+
+                    <h2>
+                        Langkah-langkah
+                    </h2>
+
+                </div>
+
+
+                <div
+                    class="tutorial-steps"
+                    id="stepsList"
+                >
+                </div>
+
+            </section>
+
+
+
+            <!-- TIPS -->
+
+            <section
+                class="tutorial-tips"
+                id="tipsSection"
+            >
+
+                <div class="tips-icon">
+                    💡
+                </div>
+
+
+                <div>
+
+                    <span class="section-label">
+                        CATATAN PENTING
+                    </span>
+
+                    <h3>
+                        Tips & Perhatian
+                    </h3>
+
+
+                    <ul id="tipsList">
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         SCRIPT
+    ========================== -->
+
+    <script src="js/data.js"></script>
+
+    <script src="js/management.js"></script>
+
+
+    <script>
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const wasteName =
+            params.get("waste");
+
+
+        const ideaSlug =
+            params.get("idea");
+
+
+
+        /*
+         * Cari data limbah
+         */
+
+        const waste =
+            wasteData.find(function(item) {
+
+                return item.name
+                    .trim()
+                    .toLowerCase() ===
+                    (wasteName || "")
+                        .replace(/-/g, " ")
+                        .trim()
+                        .toLowerCase();
+
+            });
+
+
+
+        /*
+         * Cari pilihan pengelolaan
+         */
+
+        const options =
+            managementData[wasteName] || [];
+
+
+        const selectedIdea =
+            options.find(function(item) {
+
+                return item.slug === ideaSlug;
+
+            });
+
+
+
+        /*
+         * Elemen halaman
+         */
+
+        const tutorialTitle =
+            document.getElementById(
+                "tutorialTitle"
+            );
+
+
+        const tutorialDescription =
+            document.getElementById(
+                "tutorialDescription"
+            );
+
+
+        const tutorialVisual =
+            document.getElementById(
+                "tutorialVisual"
+            );
+
+
+        const materialsList =
+            document.getElementById(
+                "materialsList"
+            );
+
+
+        const stepsList =
+            document.getElementById(
+                "stepsList"
+            );
+
+
+        const tipsList =
+            document.getElementById(
+                "tipsList"
+            );
+
+
+        const materialsSection =
+            document.getElementById(
+                "materialsSection"
+            );
+
+
+        const stepsSection =
+            document.getElementById(
+                "stepsSection"
+            );
+
+
+        const tipsSection =
+            document.getElementById(
+                "tipsSection"
+            );
+
+
+        const backProcess =
+            document.getElementById(
+                "backProcess"
+            );
+
+
+
+        /*
+         * Jika data tidak ditemukan
+         */
+
+        if (!selectedIdea) {
+
+            tutorialTitle.textContent =
+                "Informasi tidak ditemukan";
+
+
+            tutorialDescription.textContent =
+                "Pilihan pengelolaan yang kamu cari belum tersedia.";
+
+
+            materialsSection.style.display =
+                "none";
+
+
+            stepsSection.style.display =
+                "none";
+
+
+            tipsSection.style.display =
+                "none";
+
+        }
+
+
+        /*
+         * Jika data ditemukan
+         */
+
+        else {
+
+            tutorialTitle.textContent =
+                selectedIdea.title;
+
+
+            tutorialDescription.textContent =
+                selectedIdea.description;
+
+
+            /*
+             * Icon sementara
+             */
+
+            tutorialVisual.textContent =
+                selectedIdea.icon || "♻️";
+
+
+
+            /*
+             * Tombol kembali
+             */
+
+            backProcess.href =
+                "proses.html?mode=kelola&waste=" +
+                encodeURIComponent(
+                    waste
+                        ? waste.name
+                        : wasteName
+                );
+
+
+
+            /*
+             * BAHAN
+             */
+
+            materialsList.innerHTML = "";
+
+
+            if (
+                selectedIdea.materials &&
+                selectedIdea.materials.length > 0
+            ) {
+
+                selectedIdea.materials.forEach(
+                    function(material) {
+
+                        const item =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        item.className =
+                            "material-item";
+
+
+                        item.innerHTML = `
+                            <span>✓</span>
+                            <p>${material}</p>
+                        `;
+
+
+                        materialsList.appendChild(
+                            item
+                        );
+
+                    }
+                );
+
+            }
+            else {
+
+                materialsSection.style.display =
+                    "none";
+
+            }
+
+
+
+            /*
+             * LANGKAH
+             */
+
+            stepsList.innerHTML = "";
+
+
+            if (
+                selectedIdea.steps &&
+                selectedIdea.steps.length > 0
+            ) {
+
+                selectedIdea.steps.forEach(
+                    function(step, index) {
+
+                        const item =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        item.className =
+                            "tutorial-step";
+
+
+                        item.innerHTML = `
+                            <div class="tutorial-step-number">
+                                ${index + 1}
+                            </div>
+
+                            <div class="tutorial-step-content">
+                                <p>${step}</p>
+                            </div>
+                        `;
+
+
+                        stepsList.appendChild(
+                            item
+                        );
+
+                    }
+                );
+
+            }
+            else {
+
+                stepsSection.style.display =
+                    "none";
+
+            }
+
+
+
+            /*
+             * TIPS
+             */
+
+            tipsList.innerHTML = "";
+
+
+            if (
+                selectedIdea.tips &&
+                selectedIdea.tips.length > 0
+            ) {
+
+                selectedIdea.tips.forEach(
+                    function(tip) {
+
+                        const item =
+                            document.createElement(
+                                "li"
+                            );
+
+
+                        item.textContent =
+                            tip;
+
+
+                        tipsList.appendChild(
+                            item
+                        );
+
+                    }
+                );
+
+            }
+            else {
+
+                tipsSection.style.display =
+                    "none";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Panduan Limbah | SI-LIMBAH</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =========================================
+           HALAMAN PROSES
+        ========================================= */
+
+        .process-page {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 8% 15%,
+                    #e4f4e8 0,
+                    transparent 27%
+                ),
+                radial-gradient(
+                    circle at 92% 12%,
+                    #f0f5dc 0,
+                    transparent 26%
+                ),
+                radial-gradient(
+                    circle at 50% 100%,
+                    #eaf5ed 0,
+                    transparent 30%
+                ),
+                #fbfaf4;
+
+            padding: 110px 20px 80px;
+        }
+
+
+        .process-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+
+        /* =========================================
+           BACK BUTTON
+        ========================================= */
+
+        .process-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            text-decoration: none;
+
+            color: #185c43;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            margin-bottom: 35px;
+
+            transition: 0.2s;
+        }
+
+
+        .process-back:hover {
+            transform: translateX(-4px);
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .process-header {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+
+        .process-label {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            background: #e4f3e8;
+            color: #3e9270;
+
+            border-radius: 50px;
+
+            font-size: 12px;
+            font-weight: 900;
+
+            letter-spacing: 1.2px;
+
+            margin-bottom: 16px;
+        }
+
+
+        .process-icon {
+            width: 76px;
+            height: 76px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #e8f5eb;
+
+            border-radius: 24px;
+
+            font-size: 36px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(45, 93, 68, 0.08);
+        }
+
+
+        .process-header h1 {
+            color: #174f3a;
+
+            font-size: clamp(34px, 5vw, 54px);
+
+            line-height: 1.1;
+
+            margin: 0 0 15px;
+
+            font-weight: 900;
+        }
+
+
+        .process-header p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #718078;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+        .guide-box {
+            background: rgba(255, 255, 255, 0.92);
+
+            border: 1px solid #dce9df;
+
+            border-radius: 30px;
+
+            padding: 45px;
+
+            box-shadow:
+                0 20px 60px
+                rgba(45, 93, 68, 0.08);
+        }
+
+
+        .guide-title {
+            text-align: center;
+
+            color: #174f3a;
+
+            font-size: 27px;
+
+            margin: 0 0 10px;
+
+            font-weight: 900;
+        }
+
+
+        .guide-description {
+            text-align: center;
+
+            max-width: 650px;
+
+            margin: 0 auto 35px;
+
+            color: #78847d;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           STEP CARDS
+        ========================================= */
+
+        .steps {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .step-card {
+            position: relative;
+
+            background: #fbfdfb;
+
+            border: 1px solid #dfebe2;
+
+            border-radius: 22px;
+
+            padding: 25px;
+
+            transition: 0.25s;
+        }
+
+
+        .step-card:hover {
+            transform: translateY(-4px);
+
+            border-color: #9bcbb0;
+
+            box-shadow:
+                0 12px 30px
+                rgba(45, 93, 68, 0.08);
+        }
+
+
+        .step-number {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #e4f3e8;
+
+            color: #347b5c;
+
+            border-radius: 14px;
+
+            font-size: 16px;
+            font-weight: 900;
+
+            margin-bottom: 18px;
+        }
+
+
+        .step-card h3 {
+            color: #174f3a;
+
+            font-size: 19px;
+
+            margin: 0 0 9px;
+
+            font-weight: 800;
+        }
+
+
+        .step-card p {
+            color: #78847d;
+
+            font-size: 14px;
+
+            line-height: 1.75;
+
+            margin: 0;
+        }
+
+
+        /* =========================================
+           TIPS
+        ========================================= */
+
+        .tips-box {
+            margin-top: 25px;
+
+            background: #f1f8e9;
+
+            border: 1px solid #dcebd2;
+
+            border-radius: 22px;
+
+            padding: 25px;
+        }
+
+
+        .tips-title {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #3b7657;
+
+            font-size: 16px;
+
+            font-weight: 900;
+
+            margin-bottom: 10px;
+        }
+
+
+        .tips-box p {
+            color: #718078;
+
+            font-size: 14px;
+
+            line-height: 1.75;
+
+            margin: 0;
+        }
+
+
+        /* =========================================
+           BOTTOM BUTTON
+        ========================================= */
+
+        .bottom-navigation {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 35px;
+        }
+
+
+        .back-detail-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 13px 22px;
+
+            border-radius: 14px;
+
+            background: #e8f3eb;
+
+            color: #276b4e;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            transition: 0.2s;
+        }
+
+
+        .back-detail-button:hover {
+            transform: translateY(-2px);
+
+            background: #dcefe2;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .process-page {
+                padding: 90px 15px 50px;
+            }
+
+
+            .guide-box {
+                padding: 30px 20px;
+            }
+
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+
+            .process-header h1 {
+                font-size: 38px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <main class="process-page">
+
+        <div class="process-container">
+
+            <!-- KEMBALI -->
+            <a
+                href="#"
+                id="backButton"
+                class="process-back"
+            >
+                ← Kembali
+            </a>
+
+
+            <!-- HEADER -->
+            <header class="process-header">
+
+                <div
+                    class="process-icon"
+                    id="processIcon"
+                >
+                    🌱
+                </div>
+
+
+                <span class="process-label">
+                    PANDUAN LIMBAH
+                </span>
+
+
+                <h1 id="processTitle">
+                    Panduan Limbah
+                </h1>
+
+
+                <p id="processDescription">
+                    Informasi mengenai pengelolaan limbah.
+                </p>
+
+            </header>
+
+
+            <!-- CONTENT -->
+            <section class="guide-box">
+
+                <h2
+                    class="guide-title"
+                    id="guideTitle"
+                >
+                    Langkah yang dapat dilakukan
+                </h2>
+
+
+                <p
+                    class="guide-description"
+                    id="guideDescription"
+                >
+                    Ikuti langkah berikut sesuai dengan jenis
+                    limbah yang kamu miliki.
+                </p>
+
+
+                <!-- LANGKAH -->
+                <div
+                    class="steps"
+                    id="stepsContainer"
+                >
+                </div>
+
+
+                <!-- TIPS -->
+                <div class="tips-box">
+
+                    <div class="tips-title">
+                        🌿
+                        <span id="tipsTitle">
+                            Catatan penting
+                        </span>
+                    </div>
+
+
+                    <p id="tipsDescription">
+                        Pastikan pengelolaan dilakukan dengan
+                        cara yang sesuai dengan karakteristik
+                        limbah.
+                    </p>
+
+                </div>
+
+
+                <!-- NAVIGASI -->
+                <div class="bottom-navigation">
+
+                    <a
+                        href="#"
+                        id="backDetailButton"
+                        class="back-detail-button"
+                    >
+                        ← Kembali ke pilihan
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- DATA LIMBAH -->
+    <script src="js/data.js"></script>
+    <script src="js/management.js"></script>
+
+
+    <script>
+
+        /* =========================================
+           AMBIL DATA DARI URL
+        ========================================= */
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+
+        const mode =
+            params.get("mode");
+
+
+        const wasteName =
+            params.get("waste");
+
+
+        /* =========================================
+           CARI DATA LIMBAH
+        ========================================= */
+
+        const waste =
+            wasteData.find(function(item) {
+
+                return item.name
+                    .trim()
+                    .toLowerCase() ===
+                    (wasteName || "")
+                        .replace(/-/g, " ")
+                        .trim()
+                        .toLowerCase();
+
+            });
+
+
+        /* =========================================
+           ELEMEN HTML
+        ========================================= */
+
+        const processIcon =
+            document.getElementById("processIcon");
+
+        const processTitle =
+            document.getElementById("processTitle");
+
+        const processDescription =
+            document.getElementById("processDescription");
+
+        const guideTitle =
+            document.getElementById("guideTitle");
+
+        const guideDescription =
+            document.getElementById("guideDescription");
+
+        const stepsContainer =
+            document.getElementById("stepsContainer");
+
+        const tipsTitle =
+            document.getElementById("tipsTitle");
+
+        const tipsDescription =
+            document.getElementById("tipsDescription");
+
+        const backButton =
+            document.getElementById("backButton");
+
+        const backDetailButton =
+            document.getElementById("backDetailButton");
+
+
+        /* =========================================
+           JIKA DATA TIDAK DITEMUKAN
+        ========================================= */
+
+        if (!waste) {
+
+            processIcon.textContent = "🔍";
+
+            processTitle.textContent =
+                "Limbah tidak ditemukan";
+
+            processDescription.textContent =
+                "Data limbah yang kamu cari belum tersedia.";
+
+            guideTitle.textContent =
+                "Data belum tersedia";
+
+            guideDescription.textContent =
+                "Silakan kembali ke halaman pencarian.";
+
+            stepsContainer.innerHTML = "";
+
+            tipsTitle.textContent =
+                "Informasi";
+
+            tipsDescription.textContent =
+                "Gunakan kata kunci limbah yang tersedia di SI-LIMBAH.";
+
+            backButton.href =
+                "index.html";
+
+            backDetailButton.href =
+                "index.html";
+
+        }
+
+
+        /* =========================================
+           JIKA MODE = PILAH
+        ========================================= */
+
+        else if (mode === "pilah") {
+
+            processIcon.textContent =
+                "🗂️";
+
+
+            processTitle.textContent =
+                "Cara Memilah " + waste.name;
+
+
+            processDescription.textContent =
+                "Pelajari langkah sederhana untuk mengenali dan memisahkan " +
+                waste.name +
+                " sebelum masuk ke tahap pengelolaan.";
+
+
+            guideTitle.textContent =
+                "Langkah Pemilahan";
+
+
+            guideDescription.textContent =
+                "Pemilahan membantu memisahkan limbah berdasarkan jenis dan kondisi sebelum dikelola lebih lanjut.";
+
+
+            const steps = [
+
+                {
+                    title: "Kenali jenis limbah",
+                    description:
+                        "Pastikan terlebih dahulu bahwa limbah yang kamu miliki sesuai dengan jenis \"" +
+                        waste.name +
+                        "\"."
+                },
+
+                {
+                    title: "Pisahkan dari limbah lain",
+                    description:
+                        "Pisahkan " +
+                        waste.name +
+                        " dari jenis limbah lain agar lebih mudah dikelola."
+                },
+
+                {
+                    title: "Periksa kondisi limbah",
+                    description:
+                        "Perhatikan kondisi limbah dan pisahkan bagian yang tidak sesuai untuk proses pengelolaan berikutnya."
+                },
+
+                {
+                    title: "Siapkan untuk dikelola",
+                    description:
+                        "Setelah dipilah, simpan limbah pada tempat yang sesuai sampai masuk ke tahap pengelolaan."
+                }
+
+            ];
+
+
+            stepsContainer.innerHTML =
+                steps.map(function(step, index) {
+
+                    return `
+
+                        <article class="step-card">
+
+                            <div class="step-number">
+                                ${index + 1}
+                            </div>
+
+                            <h3>
+                                ${step.title}
+                            </h3>
+
+                            <p>
+                                ${step.description}
+                            </p>
+
+                        </article>
+
+                    `;
+
+                }).join("");
+
+
+            tipsTitle.textContent =
+                "Tips pemilahan";
+
+
+            tipsDescription.textContent =
+                "Lakukan pemilahan sedini mungkin agar limbah tidak tercampur dan lebih mudah diarahkan ke proses pengelolaan yang sesuai.";
+
+        }
+
+
+       /* =========================================
+   JIKA MODE = KELOLA
+========================================= */
+
+else if (mode === "kelola") {
+
+    processIcon.textContent = "♻️";
+
+    processTitle.textContent =
+        "Mau dibuat jadi apa?";
+
+    processDescription.textContent =
+        "Pilih kreasi yang ingin kamu buat dari limbah " +
+        waste.name + ".";
+
+    guideTitle.textContent =
+        "Pilih Ide Pengelolaan";
+
+    guideDescription.textContent =
+        "Temukan berbagai cara untuk mengolah kembali " +
+        waste.name +
+        " menjadi barang yang lebih berguna dan menarik.";
+
+  const managementOptions =
+    managementData[waste.name] || [];
+
+stepsContainer.innerHTML = "";
+
+managementOptions.forEach(function(option) {
+
+    const card =
+        document.createElement("div");
+
+    card.className =
+        "management-card";
+
+    card.innerHTML = `
+        <div class="management-icon">
+            ${option.icon}
+        </div>
+
+        <h3>
+            ${option.title}
+        </h3>
+
+        <p>
+            ${option.description}
+        </p>
+
+        <button
+            class="detail-button"
+            onclick="openTutorial(
+                '${waste.name}',
+                '${option.slug}'
+            )"
+        >
+            Lihat tutorial →
+        </button>
+    `;
+
+    stepsContainer.appendChild(card);
+
+});
+
+        }
+
+
+        /* =========================================
+           TOMBOL KEMBALI
+        ========================================= */
+
+        if (waste) {
+
+            backButton.href =
+                "detail.html?waste=" +
+                encodeURIComponent(waste.name);
+
+
+            backDetailButton.href =
+                "detail.html?waste=" +
+                encodeURIComponent(waste.name);
+
+        } function openTutorial(wasteName, ideaSlug) {
+
+    window.location.href =
+        "tutorial.html?waste=" +
+        encodeURIComponent(wasteName) +
+        "&idea=" +
+        encodeURIComponent(ideaSlug);
+
+}
+
+    </script>
+
+</body>
+
+</html>

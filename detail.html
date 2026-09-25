@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detail Limbah | SI-LIMBAH</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .detail-page {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 10% 20%, #e5f4e8 0, transparent 28%),
+                radial-gradient(circle at 90% 10%, #eef5dc 0, transparent 25%),
+                #fbfaf4;
+
+            padding: 120px 20px 80px;
+        }
+
+        .detail-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #185c43;
+            font-weight: 700;
+            margin-bottom: 35px;
+        }
+
+        .detail-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .detail-label {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #e4f3e8;
+            color: #3e9270;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .detail-header h1 {
+            font-size: clamp(36px, 5vw, 60px);
+            color: #174f3a;
+            margin: 0 0 15px;
+            font-weight: 900;
+        }
+
+        .detail-header p {
+            max-width: 650px;
+            margin: auto;
+            color: #718078;
+            line-height: 1.8;
+        }
+
+        .validation-box {
+            background: rgba(255,255,255,0.9);
+            border: 1px solid #dce9df;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(45, 93, 68, 0.08);
+            text-align: center;
+        }
+
+        .validation-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 24px;
+            background: #e8f5eb;
+            font-size: 38px;
+        }
+
+        .validation-box h2 {
+            color: #174f3a;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .validation-box > p {
+            color: #758179;
+            margin-bottom: 35px;
+        }
+
+        .validation-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            text-align: left;
+        }
+
+        .validation-option {
+            border: 2px solid #e0ebe3;
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 28px;
+            cursor: pointer;
+            transition: 0.25s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .validation-option:hover {
+            transform: translateY(-5px);
+            border-color: #78b995;
+            box-shadow: 0 15px 35px rgba(40, 105, 73, 0.10);
+        }
+
+        .option-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eef8f0;
+            border-radius: 16px;
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+
+        .validation-option h3 {
+            color: #174f3a;
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .validation-option p {
+            color: #78847d;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .option-arrow {
+            color: #3c936c;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+
+            .detail-page {
+                padding: 100px 15px 50px;
+            }
+
+            .validation-box {
+                padding: 30px 20px;
+            }
+
+            .validation-options {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <main class="detail-page">
+
+        <div class="detail-container">
+
+            <a href="index.html" class="back-button">
+                ← Kembali ke pencarian
+            </a>
+
+
+            <div class="detail-header">
+
+                <span class="detail-label">
+                    INFORMASI LIMBAH
+                </span>
+
+                <h1 id="wasteName">
+                    Limbah
+                </h1>
+
+                <p id="wasteDescription">
+                    Pilih informasi yang ingin kamu ketahui
+                    mengenai limbah ini.
+                </p>
+
+            </div>
+
+
+            <section class="validation-box">
+
+                <div class="validation-icon">
+                    🌱
+                </div>
+
+                <h2>
+                    Kamu ingin melakukan apa?
+                </h2>
+
+                <p>
+                    Pilih informasi yang sesuai dengan kebutuhanmu
+                    untuk melihat panduan pengelolaan limbah.
+                </p>
+
+
+                <div class="validation-options">
+
+                    <!-- PILAH -->
+
+                    <a
+                        href="#"
+                        id="pilahButton"
+                        class="validation-option"
+                    >
+
+                        <div class="option-icon">
+                            🗂️
+                        </div>
+
+                        <h3>
+                            Mau memilah sampah?
+                        </h3>
+
+                        <p>
+                            Lihat cara mengenali, memisahkan,
+                            dan menyiapkan limbah sebelum dikelola.
+                        </p>
+
+                        <span class="option-arrow">
+                            Lihat cara pemilahan →
+                        </span>
+
+                    </a>
+
+
+                    <!-- KELOLA -->
+
+                    <a
+                        href="#"
+                        id="kelolaButton"
+                        class="validation-option"
+                    >
+
+                        <div class="option-icon">
+                            ♻️
+                        </div>
+
+                        <h3>
+                            Mau mengelola sampah?
+                        </h3>
+
+                        <p>
+                            Lihat cara pengelolaan dan kemungkinan
+                            pemanfaatan limbah.
+                        </p>
+
+                        <span class="option-arrow">
+                            Lihat cara pengelolaan →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- DATA LIMBAH -->
+
+    <script src="js/data.js"></script>
+
+
+    <script>
+
+const params =
+    new URLSearchParams(window.location.search);
+
+const wasteName =
+    params.get("waste");
+
+const normalizedWasteName =
+    wasteName
+        ? wasteName
+            .replace(/-/g, " ")
+            .trim()
+            .toLowerCase()
+        : "";
+
+const waste =
+    wasteData.find(function(item) {
+
+        return item.name
+            .trim()
+            .toLowerCase() === normalizedWasteName;
+
+    });
+
+
+        if (waste) {
+
+            document.getElementById("wasteName").textContent =
+                waste.name;
+
+            document.getElementById("wasteDescription").textContent =
+                waste.description;
+
+
+            document.getElementById("pilahButton").href =
+                "proses.html?mode=pilah&waste=" +
+                encodeURIComponent(waste.name);
+
+
+            document.getElementById("kelolaButton").href =
+                "proses.html?mode=kelola&waste=" +
+                encodeURIComponent(waste.name);
+
+        } else {
+
+            document.getElementById("wasteName").textContent =
+                "Limbah tidak ditemukan";
+
+            document.getElementById("wasteDescription").textContent =
+                "Data limbah yang kamu cari belum tersedia.";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
